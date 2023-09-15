@@ -26,10 +26,13 @@ class SoftwareRender:
         self.object.draw()
 
     def run(self):
+        stateTrans = True
         while True:
             #self.object.rotate_x(math.pi/6)
-            self.object.rotate_y(math.pi/60)
+            self.object.rotate_y(-math.pi/240)
             #self.object.rotate_z(math.pi/6)
+            stateInt = 0
+            self.object.translate([0,0.00001,0])
             self.draw()
             [exit() for i in pg.event.get() if i.type==pg.QUIT]
             pg.display.set_caption(str(self.clock.get_fps()))
